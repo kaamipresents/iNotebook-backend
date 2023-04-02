@@ -22,9 +22,9 @@ var env = require('dotenv').config();
 //this is done to avoid defining all the routes here and instead link to the routes defined in different files separately
 
 //importing the routes middleware
-const home = require('./routes/home')
-const auth = require('./routes/auth')
-const notes = require('./routes/notes')
+const home = require('./home')
+const auth = require('.auth')
+const notes = require('./notes')
 
 //endpoints
 app.use('/.netlify/functions/',home)
