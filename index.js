@@ -1,10 +1,10 @@
-const serverless = require('serverless-http');
+// const serverless = require('serverless-http');
 var env = require('dotenv').config();
 // const serverless = require('serverless-http')
 
 //Connecting to Database
     //importing function from 'db.js' file
-    const connectToMongo = require('../db');
+    const connectToMongo = require('./db');
     //running the imported function
     connectToMongo();
 
@@ -22,14 +22,14 @@ var env = require('dotenv').config();
 //this is done to avoid defining all the routes here and instead link to the routes defined in different files separately
 
 //importing the routes middleware
-const home = require('../routes/home')
-const auth = require('../routes/auth')
-const notes = require('../routes/notes')
+const home = require('./routes/home')
+const auth = require('./routes/auth')
+const notes = require('./routes/notes')
 
 //endpoints
-app.use('/',home)
-app.use('/api/auth',auth)
-app.use('/api/notes',notes)
+app.use('/.netlify/functions/',home)
+app.use('/.netlify/functions/api/auth',auth)
+app.use('/.netlify/functions/api/notes',notes)
 
 //port declaring
 const port = process.env.PORT || 9000
@@ -38,4 +38,4 @@ app.listen(port,() => {
   console.log(`iNotebook backend on port ${port}`)
 })
 
-module.exports.handler = serverless(app) ;
+// module.exports.handler = serverless(app) ;
