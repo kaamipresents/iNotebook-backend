@@ -27,9 +27,9 @@ const auth = require('.auth')
 const notes = require('./notes')
 
 //endpoints
-app.use('/.netlify/functions/',home)
-app.use('/.netlify/functions/api/auth',auth)
-app.use('/.netlify/functions/api/notes',notes)
+app.use('/api',home)
+app.use('/api/auth',auth)
+app.use('/api/notes',notes)
 
 //port declaring
 const port = process.env.PORT || 9000
