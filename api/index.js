@@ -38,4 +38,5 @@ app.listen(port,() => {
   console.log(`iNotebook backend on port ${port}`)
 })
 
-module.exports.handler = serverless(app) ;
+// module.exports.handler = serverless(app) ;
+module.exports = app ;
