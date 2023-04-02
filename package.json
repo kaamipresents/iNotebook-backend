@@ -2,10 +2,10 @@
   "name": "inotebook",
   "version": "1.0.0",
   "description": "Notebook application for cloud",
-  "main": "index.js",
+  "main": "api.js",
   "scripts": {
-    "start": "node index.js",
-    "build": "node index.js"
+    "start": "node ../functions/api.js",
+    "build": "node ../functions/api.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +17,7 @@
     "express-validator": "^6.15.0",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.1",
+    "netlify-cli": "^13.2.2",
     "serverless-http": "^3.2.0"
   },
   "devDependencies": {

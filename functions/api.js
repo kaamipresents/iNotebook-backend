@@ -4,7 +4,7 @@ var env = require('dotenv').config();
 
 //Connecting to Database
     //importing function from 'db.js' file
-    const connectToMongo = require('./db');
+    const connectToMongo = require('../db');
     //running the imported function
     connectToMongo();
 
@@ -22,9 +22,9 @@ var env = require('dotenv').config();
 //this is done to avoid defining all the routes here and instead link to the routes defined in different files separately
 
 //importing the routes middleware
-const home = require('./functions/home')
-const auth = require('./functions/auth')
-const notes = require('./functions/notes')
+const home = require('../routes/home')
+const auth = require('../routes/auth')
+const notes = require('../routes/notes')
 
 //endpoints
 app.use('/',home)
@@ -34,8 +34,8 @@ app.use('/api/notes',notes)
 //port declaring
 const port = process.env.PORT || 9000
 
-// app.listen(port,() => {
-//   console.log(`iNotebook backend on port ${port}`)
-// })
+app.listen(port,() => {
+  console.log(`iNotebook backend on port ${port}`)
+})
 
 module.exports.handler = serverless(app) ;
