@@ -4,7 +4,7 @@ var env = require('dotenv').config();
 
 //Connecting to Database
     //importing function from 'db.js' file
-    const connectToMongo = require('./db');
+    const connectToMongo = require('../db');
     //running the imported function
     connectToMongo();
 
@@ -23,7 +23,7 @@ var env = require('dotenv').config();
 
 //importing the routes middleware
 const home = require('./home')
-const auth = require('.auth')
+const auth = require('./auth')
 const notes = require('./notes')
 
 //endpoints
