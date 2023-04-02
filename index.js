@@ -34,8 +34,8 @@ app.use('/api/notes',notes)
 //port declaring
 const port = process.env.PORT || 9000
 
-app.listen(port,() => {
-  console.log(`iNotebook backend on port ${port}`)
-})
+// app.listen(port,() => {
+//   console.log(`iNotebook backend on port ${port}`)
+// })
 
 module.exports.handler = serverless(app) ;
